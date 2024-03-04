@@ -1,27 +1,26 @@
-import { useState } from 'react'
+import {React} from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {MainPage} from "./Components/MainPage.tsx";
+import {UnloggedGenerator} from "./Components/UnloggedGenerator.tsx";
 
 export const App = () => {
 
-    const [basicState, setBasicState] = useState(true);
 
     return(
-        <div>
-            <div>
-                <p>SNG</p>
-            </div>
-            <div>
-                <button>Login</button>
-                <button>Register</button>
-                <button>Dark mode</button>
-                <button>Language switch</button>
-            </div>
-            <div>
-                <button>Start</button>
-                <div>
-                    basic app body
-                </div>
-            </div>
-        </div>
+
+        <Router>
+            <Routes>
+                <Route path='/'
+                       element={<MainPage/>}
+                />
+                <Route
+                    path='/unloggedGenerator'
+                    element={
+                    <UnloggedGenerator />
+                    }
+                />
+            </Routes>
+        </Router>
     )
 }
 

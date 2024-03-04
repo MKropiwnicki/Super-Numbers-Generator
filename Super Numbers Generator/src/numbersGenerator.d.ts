@@ -1,0 +1,1 @@
+export declare function numbersGenerator(min: number, max: number, repetitions: number): number[];

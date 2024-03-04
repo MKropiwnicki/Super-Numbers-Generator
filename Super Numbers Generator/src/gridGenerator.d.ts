@@ -1,0 +1,1 @@
+export declare function gridGenerator(min: number, max: number): number[];

@@ -40,11 +40,14 @@ const handleGenerate = (e: FormEvent) => {
 
 
     let btnContent;
+    let refreshed;
 
     if (refreshIcon) {
         btnContent = <FontAwesomeIcon icon={faArrowsRotate} className={'refresh-icon'}/>;
+        refreshed = 'arrows'
     } else {
         btnContent =  <p>Generate</p>;
+        refreshed = '';
     }
 
     const container = {
@@ -138,7 +141,7 @@ const handleGenerate = (e: FormEvent) => {
                                     id='amount'
                                     placeholder=''/>
                             </motion.div>
-                            <motion.button variants={item} className='generator-btn' onClick={handleGenerate}
+                            <motion.button variants={item} className={`generator-btn ${refreshed}`} onClick={handleGenerate}
                                            type='submit'>{btnContent}
                             </motion.button>
                         </motion.form>

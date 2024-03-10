@@ -31,7 +31,6 @@
     .menu-container {
       display: flex;
       justify-content: flex-end;
-      gap: 1.5rem;
     }
 
 
@@ -47,6 +46,7 @@
       background: none;
       box-shadow: 0 0 5px navy;
       padding: 0;
+      margin-left: 5rem;
 
       .theme-icon {
         color: rgba(0, 0 , 128, 1);
@@ -229,8 +229,10 @@
 
       .start-btn {
         padding: 2rem 1rem;
-        background: rgba(0, 223, 0, 1);
-        border: none;
+        background: rgba(0, 223, 0, 0.5);
+        border: 0.5px solid rgba(0 , 0 , 128, 0.6);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
         border-radius: 80px;
         width: 60%;
         margin: 2rem auto;
@@ -280,14 +282,16 @@
 
       .login-btn-big {
         padding: 2rem 1rem;
-        background: rgba(0, 0, 223, 1);
-        border: none;
+        background: rgba(255, 165, 0, 0.5);
+        border: 0.5px solid rgba(0 , 0 , 128, 0.6);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
         border-radius: 80px;
         width: 60%;
         margin: 1.5rem auto;
         font-family: variables.$Gluten;
         font-size: 2rem;
-        color: rgba(0, 223, 0, 1);
+        color: (0, 100, 250, 0.8);
 
         &:hover {
           box-shadow: 0 0 30px rgba(0, 100, 250, 0.8);

@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 
 type GeneratedNumbersProps = {
     dataToRender: Array<number>,
-    amount: number,
-    max: number
+    amount: number | null,
+    max: number | null
 }
 export const GeneratedNumbers = ({dataToRender, amount, max}: GeneratedNumbersProps) => {
 

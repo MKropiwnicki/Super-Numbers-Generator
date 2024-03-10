@@ -1,7 +1,13 @@
-import React from "react";
 import { motion } from "framer-motion";
 
-export const NumbersGrid  = ({data, selectedNumbers}) => {
+
+type NumbersGridProps = {
+    data: number[],
+    selectedNumbers: number[]
+
+}
+
+export const NumbersGrid  = ({data, selectedNumbers}: NumbersGridProps) => {
 
     const containerNumbers = {
         hidden: { opacity: 1, scale: 0 },

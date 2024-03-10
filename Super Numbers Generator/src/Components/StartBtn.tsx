@@ -1,12 +1,12 @@
-import React from "react";
 import {useNavigate} from "react-router-dom";
 
-export const StartBtn = ({visibility, visibilitySwitch, numGen, numGenSwitch}) => {
+
+
+
+export const StartBtn = () => {
 
     const navigate = useNavigate();
     const handleStart = () => {
-        // visibilitySwitch(!visibility)
-        // numGenSwitch(!numGen)
         navigate('/unloggedGenerator');
     }
 

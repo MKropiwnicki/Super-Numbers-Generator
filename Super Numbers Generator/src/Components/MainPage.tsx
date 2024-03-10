@@ -1,15 +1,13 @@
-import React, {useState} from "react";
-import {NavBar} from "./NavBar.tsx";
+import { useState } from "react";
+import { NavBar } from "./NavBar.tsx";
 import { motion, AnimatePresence,easeInOut } from "framer-motion"
-import {Start} from "./Start.tsx";
-import {Divider} from "./Divider.tsx";
-import {Login} from "./Login.tsx";
-import {NumbersGenerator} from "./NumbersGenerator.tsx";
+import { Start } from "./Start.tsx";
+import { Divider } from "./Divider.tsx";
+import { Login } from "./Login.tsx";
 
 export const MainPage = () => {
 
     const [visibility, setVisibility] = useState(true);
-    const [numberGenerator, setNumberGenerator] = useState(false);
 
 
 
@@ -23,12 +21,10 @@ export const MainPage = () => {
                                                    transition={{easeInOut, duration: 0.5}}
                                                    exit={{y: 1000, opacity: 0}}
                                                    className='body-container'>
-                            <Start visibility={visibility} visibilitySwitch={setVisibility} numGen={numberGenerator}
-                                   numGenSwitch={setNumberGenerator}/>
+                            <Start />
                             <Divider/>
                             <Login/>
                         </motion.div>}
-                        {/*{numberGenerator && <NumbersGenerator/>}*/}
                     </motion.div>
                 </AnimatePresence>
             )

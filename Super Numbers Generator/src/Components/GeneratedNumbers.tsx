@@ -1,6 +1,11 @@
-import React from "react";
 import { motion } from "framer-motion";
-export const GeneratedNumbers = ({dataToRender, amount, max}) => {
+
+type GeneratedNumbersProps = {
+    dataToRender: Array<number>,
+    amount: number,
+    max: number
+}
+export const GeneratedNumbers = ({dataToRender, amount, max}: GeneratedNumbersProps) => {
 
     const containerNumbers = {
         hidden: { opacity: 1, scale: 0 },

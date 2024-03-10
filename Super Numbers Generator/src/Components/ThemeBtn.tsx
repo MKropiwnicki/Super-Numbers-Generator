@@ -3,7 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 
-export const ThemeBtn = ({theme, themeSwitch}) => {
+type ThemeBtnProps = {
+    theme: boolean,
+    themeSwitch: React.Dispatch<boolean>;
+}
+
+export const ThemeBtn = ({theme, themeSwitch}: ThemeBtnProps) => {
 
     const handleTheme = () => {
         themeSwitch(!theme);
@@ -18,6 +23,6 @@ export const ThemeBtn = ({theme, themeSwitch}) => {
       }
 
     return (
-        <button className={`theme-btn ${theme ? 'dark' : 'light'}`} onClick={handleTheme} >{icon}</button>
+        <button className={`theme-btn ${theme ? 'dark' : 'light'}`} onClick={handleTheme}>{icon}</button>
     )
 }

@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion, easeInOut } from "framer-motion"
 
 export const MobileMenu = () => {

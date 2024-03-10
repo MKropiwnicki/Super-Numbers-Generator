@@ -6,7 +6,12 @@ import { motion, AnimatePresence } from "framer-motion"
 import {useNavigate} from "react-router-dom";
 
 
-export const NavBar = ({visibility, visibilitySwitch}) => {
+type NavBarProps = {
+    visibility: boolean,
+    visibilitySwitch: React.Dispatch<boolean>
+}
+
+export const NavBar = ({visibility, visibilitySwitch}: NavBarProps) => {
 
     const navigate = useNavigate();
 

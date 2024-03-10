@@ -1,8 +1,14 @@
 import React from 'react';
 
 
+type HamburgerProps = {
+    clicked: boolean,
+    menuSwitch: React.Dispatch<boolean>,
+    visibility: boolean,
+    visibilitySwitch: React.Dispatch<boolean>
+}
 
-export const Hamburger = ({clicked, menuSwitch, visibility, visibilitySwitch}) => {
+export const Hamburger = ({clicked, menuSwitch, visibility, visibilitySwitch}: HamburgerProps) => {
 
     const handleMenu = () => {
         menuSwitch(!clicked);

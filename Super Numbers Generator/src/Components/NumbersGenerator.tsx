@@ -1,34 +1,32 @@
-import React, {useEffect, useState} from 'react';
+import { useState, FormEvent } from 'react';
 import { motion, AnimatePresence, easeInOut } from "framer-motion";
 import { numbersGenerator } from '../numbersGenerator.js'
 import { gridGenerator } from '../gridGenerator.js'
 import { NumbersGrid } from "./NumbersGrid.tsx";
 import {GeneratedNumbers} from "./GeneratedNumbers.tsx";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+
+// import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+
+
+
 
 export const NumbersGenerator = () => {
 
     const [rangeMinimum, setRangeMinimum] = useState(0);
     const [rangeMaximum, setRangeMaximum] = useState(0);
     const [amount, setAmount] = useState(0);
-    const [dataToRender, setDataToRender] = useState([]);
-    const [gridData, setGridData] = useState([]);
-    const [buttonClick, setButtonClick] = useState(0);
+    const [dataToRender, setDataToRender] = useState<number[]>([]);
+    const [gridData, setGridData] = useState<number[]>([]);
     const [numbersList, setNumbersList] = useState(false);
     const [numbersGrid, setNumbersGrid] = useState(false);
 
-    // useEffect(() => {
-    //     const generatedNumbers = numbersGenerator(rangeMinimum, rangeMaximum, amount)
-    //     setDataToRender(generatedNumbers);
-    // }, [buttonClick]);
 
 
-const handleGenerate = (e) => {
+const handleGenerate = (e: FormEvent) => {
     e.preventDefault();
     const generatedNumbers = numbersGenerator(rangeMinimum, rangeMaximum, amount)
     setDataToRender(generatedNumbers);
     grid();
-    setButtonClick(prevState => prevState + 1);
     setNumbersGrid(true);
     setNumbersList(true);
 }
@@ -69,26 +67,6 @@ const handleGenerate = (e) => {
 
     const itemForm = {
         hidden: { y: 20, opacity: 0 },
-        visible: {
-            y: 0,
-            opacity: 1
-        }
-    };
-
-    const containerNumbers = {
-        hidden: { opacity: 1, scale: 0 },
-        visible: {
-            opacity: 1,
-            scale: 1,
-            transition: {
-                delayChildren: 1,
-                staggerChildren: 0.4
-            }
-        }
-    };
-
-    const itemNumbers = {
-        hidden: { y: 0, opacity: 0 },
         visible: {
             y: 0,
             opacity: 1

@@ -1,4 +1,3 @@
-import {React} from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import {MainPage} from "./Components/MainPage.tsx";
 import {UnloggedGenerator} from "./Components/UnloggedGenerator.tsx";

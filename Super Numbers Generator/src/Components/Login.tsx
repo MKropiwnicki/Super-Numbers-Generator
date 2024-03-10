@@ -1,4 +1,3 @@
-import React from 'react';
 import {LoginBtn} from "./LoginBtn.tsx";
 
 

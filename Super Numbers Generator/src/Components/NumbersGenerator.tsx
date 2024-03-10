@@ -78,9 +78,6 @@ const handleGenerate = (e: FormEvent) => {
     }
 
 
-
-    // @ts-ignore
-    // @ts-ignore
     return(
         <AnimatePresence>
             <motion.div className='generator-wrapper'

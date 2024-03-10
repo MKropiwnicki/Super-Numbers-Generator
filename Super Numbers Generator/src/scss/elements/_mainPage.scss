@@ -19,8 +19,13 @@
     justify-content: space-between;
     border-bottom: 1px solid rgba(0, 0 , 128, 0.2);
 
-    .main-title:hover {
-      cursor: pointer;
+    .main-title {
+      font-size: 2rem;
+      text-align: center;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     .menu-container {
@@ -43,6 +48,10 @@
       font-size: 1rem;
       text-align: center;
       box-shadow: 0 0 5px navy;
+
+      .theme-icon {
+        margin: 0 auto;
+      }
 
 
       &:active {

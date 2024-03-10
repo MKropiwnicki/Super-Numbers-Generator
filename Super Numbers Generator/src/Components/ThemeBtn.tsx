@@ -17,9 +17,9 @@ export const ThemeBtn = ({theme, themeSwitch}: ThemeBtnProps) => {
     let icon;
 
       if (!theme) {
-          icon = <FontAwesomeIcon icon={faMoon}/>;
+          icon = <FontAwesomeIcon icon={faMoon} className={'theme-icon'}/>;
       } else {
-         icon =  <FontAwesomeIcon icon={faSun}/>;
+         icon =  <FontAwesomeIcon icon={faSun} className={'theme-icon'}/>;
       }
 
     return (

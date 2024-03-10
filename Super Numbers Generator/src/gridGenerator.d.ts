@@ -1,1 +1,1 @@
-export declare function gridGenerator(min: number, max: number): number[];
+export declare function gridGenerator(min: number | null, max: number | null): number[];

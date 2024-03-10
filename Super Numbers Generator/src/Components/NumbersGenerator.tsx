@@ -12,9 +12,9 @@ import {GeneratedNumbers} from "./GeneratedNumbers.tsx";
 
 export const NumbersGenerator = () => {
 
-    const [rangeMinimum, setRangeMinimum] = useState(0);
-    const [rangeMaximum, setRangeMaximum] = useState(0);
-    const [amount, setAmount] = useState(0);
+    const [rangeMinimum, setRangeMinimum] = useState<number | null>(null);
+    const [rangeMaximum, setRangeMaximum] = useState<number | null>(null);
+    const [amount, setAmount] = useState<number | null>(null);
     const [dataToRender, setDataToRender] = useState<number[]>([]);
     const [gridData, setGridData] = useState<number[]>([]);
     const [numbersList, setNumbersList] = useState(false);
@@ -79,6 +79,8 @@ const handleGenerate = (e: FormEvent) => {
 
 
 
+    // @ts-ignore
+    // @ts-ignore
     return(
         <AnimatePresence>
             <motion.div className='generator-wrapper'
@@ -103,7 +105,7 @@ const handleGenerate = (e: FormEvent) => {
                             <motion.div
                                 variants={itemForm}>
                                 <label htmlFor='range-min'>Minimum:</label>
-                                <input value={rangeMinimum} onChange={(e) => setRangeMinimum(+e.target.value)}
+                                <input value={rangeMinimum?.toString()} onChange={(e) => setRangeMinimum(+e.target.value)}
                                        type='number'
                                        id='range-min'
                                        placeholder=''/>
@@ -111,7 +113,7 @@ const handleGenerate = (e: FormEvent) => {
                             <motion.div
                                 variants={itemForm}>
                                 <label htmlFor='range-max'>Maximum:</label>
-                                <input value={rangeMaximum} onChange={(e) => setRangeMaximum(+e.target.value)}
+                                <input value={rangeMaximum?.toString()} onChange={(e) => setRangeMaximum(+e.target.value)}
                                        type='number'
                                        id='range-max'
                                        placeholder=''/>
@@ -120,10 +122,10 @@ const handleGenerate = (e: FormEvent) => {
                                 variants={itemForm}>
                                 <label htmlFor='range-max'>How many?</label>
                                 <input
-                                    value={amount} onChange={(e) => setAmount(+e.target.value)}
-                                       type='number'
-                                       id='amount'
-                                       placeholder=''/>
+                                    value={amount?.toString()} onChange={(e) => setAmount(+e.target.value)}
+                                    type='number'
+                                    id='amount'
+                                    placeholder=''/>
                             </motion.div>
                             <motion.button variants={item} className='generator-btn' onClick={handleGenerate}
                                            type='submit'>Generate

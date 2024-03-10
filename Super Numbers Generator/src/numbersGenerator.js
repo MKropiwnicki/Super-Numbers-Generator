@@ -1,4 +1,4 @@
-export const numbersGenerator = (min, max, repetitions) => {
+export const numbersGenerator = (min = 0, max = 0, repetitions = 0) => {
     let uniqueNumbers = new Set();
     const minCeiled = Math.ceil(min);
     const maxFloored = Math.floor(max);

@@ -1,4 +1,4 @@
-export const gridGenerator = (min, max) => {
+export const gridGenerator = (min = 0, max = 0) => {
 
     let numbersGrid = []
 

@@ -4,8 +4,9 @@ import { numbersGenerator } from '../numbersGenerator.js'
 import { gridGenerator } from '../gridGenerator.js'
 import { NumbersGrid } from "./NumbersGrid.tsx";
 import {GeneratedNumbers} from "./GeneratedNumbers.tsx";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faArrowsRotate} from "@fortawesome/free-solid-svg-icons";
 
-// import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
 
@@ -19,6 +20,7 @@ export const NumbersGenerator = () => {
     const [gridData, setGridData] = useState<number[]>([]);
     const [numbersList, setNumbersList] = useState(false);
     const [numbersGrid, setNumbersGrid] = useState(false);
+    const [refreshIcon, setRefreshIcon] = useState(false);
 
 
 
@@ -29,9 +31,21 @@ const handleGenerate = (e: FormEvent) => {
     grid();
     setNumbersGrid(true);
     setNumbersList(true);
+
+    if(rangeMinimum !== null && rangeMaximum !== null && amount !== null) {
+        setRefreshIcon(true);
+    }
 }
 
 
+
+    let btnContent;
+
+    if (refreshIcon) {
+        btnContent = <FontAwesomeIcon icon={faArrowsRotate} className={'refresh-icon'}/>;
+    } else {
+        btnContent =  <p>Generate</p>;
+    }
 
     const container = {
         hidden: { opacity: 1, scale: 1 },
@@ -125,7 +139,7 @@ const handleGenerate = (e: FormEvent) => {
                                     placeholder=''/>
                             </motion.div>
                             <motion.button variants={item} className='generator-btn' onClick={handleGenerate}
-                                           type='submit'>Generate
+                                           type='submit'>{btnContent}
                             </motion.button>
                         </motion.form>
                     </motion.div>

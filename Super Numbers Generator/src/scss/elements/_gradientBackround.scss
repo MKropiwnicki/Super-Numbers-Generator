@@ -1,0 +1,64 @@
+@use '../settings/variables';
+@use '../settings/colors';
+
+@keyframes circlePath {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes verticalPath {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes horizontalPath {
+  0% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+}
+
+
+.gradient-animation-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  top: 0;
+  left: 0;
+
+  svg {
+    display: none;
+  }
+
+
+  .gradients-container {
+    //filter: url(#blur-filter) blur(3.5rem);
+    filter: blur(3.5rem);
+    //-webkit-filter: url(#blur-filter) blur(3.5rem);
+    -webkit-filter: blur(3.5rem);
+    width: 100%;
+    height: 100%;
+  }
+
+}

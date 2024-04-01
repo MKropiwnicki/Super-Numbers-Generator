@@ -8,10 +8,12 @@ import {useNavigate} from "react-router-dom";
 
 type NavBarProps = {
     visibility: boolean,
-    visibilitySwitch: React.Dispatch<boolean>
+    visibilitySwitch: React.Dispatch<boolean>,
+    themeToggle: React.Dispatch<void>,
+    theme: string
 }
 
-export const NavBar = ({visibility, visibilitySwitch}: NavBarProps) => {
+export const NavBar = ({visibility, visibilitySwitch, themeToggle, theme}: NavBarProps) => {
 
     const navigate = useNavigate();
 
@@ -19,7 +21,6 @@ export const NavBar = ({visibility, visibilitySwitch}: NavBarProps) => {
         navigate('/');
     }
 
-    const [theme, setTheme] = useState(false);
     const [clicked, setClicked] = useState(false)
 
     return(
@@ -30,7 +31,7 @@ export const NavBar = ({visibility, visibilitySwitch}: NavBarProps) => {
                     <nav className='menu-container'>
                         <button className='menu-btn'>Login</button>
                         <button className='menu-btn'>Register</button>
-                        <ThemeBtn theme={theme} themeSwitch={setTheme}/>
+                        <ThemeBtn theme={theme} themeToggle={themeToggle}/>
                         <Hamburger clicked={clicked} menuSwitch={setClicked} visibility={visibility} visibilitySwitch={visibilitySwitch}/>
                     </nav>
                 </motion.div>

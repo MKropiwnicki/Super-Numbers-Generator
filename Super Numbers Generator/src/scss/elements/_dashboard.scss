@@ -1,0 +1,10 @@
+@use '../settings/variables';
+@use '../settings/colors';
+
+
+.logged-background {
+  background: blue;
+  color: white;
+  font-size: 6rem;
+  padding: 4rem;
+}

@@ -1,25 +1,25 @@
-import { useState } from "react";
-import { NavBar } from "./NavBar.tsx";
 import { motion, AnimatePresence,easeInOut } from "framer-motion"
 import { Start } from "./Start.tsx";
 import { Divider } from "./Divider.tsx";
 import { Login } from "./Login.tsx";
 
-export const MainPage = () => {
+type MainPageProps = {
+    visibility: boolean
+}
 
-    const [visibility, setVisibility] = useState(true);
+export const MainPage = ({visibility}: MainPageProps) => {
+
 
 
 
         return(
                 <AnimatePresence>
                     <motion.div className='mainPage-container'>
-                        <NavBar visibility={visibility} visibilitySwitch={setVisibility}/>
-                        {visibility && <motion.div key={"menu-box"}
-                                                   initial={{y: 1000, opacity: 0}}
+                        {visibility && <motion.div key={"menuBox"}
+                                                   initial={{y: 0, opacity: 0}}
                                                    animate={{y: 0, opacity: 1}}
-                                                   transition={{easeInOut, duration: 0.5}}
-                                                   exit={{y: 1000, opacity: 0}}
+                                                   transition={{easeInOut, duration: 0.8}}
+                                                   exit={{y: 0, opacity: 0}}
                                                    className='body-container'>
                             <Start />
                             <Divider/>

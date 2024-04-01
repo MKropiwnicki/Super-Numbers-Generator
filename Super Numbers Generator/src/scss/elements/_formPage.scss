@@ -1,0 +1,240 @@
+@use '../settings/variables';
+@use '../settings/colors';
+
+.form-page-container {
+  width: 100%;
+  height: 100svh;
+  position: relative;
+
+
+  .bar {
+    background: transparent;
+    padding: 1rem;
+    width: 100%;
+    height: 4rem;
+    flex-wrap: wrap;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+
+    .back-icon {
+      display: block;
+      font-size: 2rem;
+    }
+  }
+
+  .form-container {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: variables.$Montserrat;
+
+    .form {
+      width: 90%;
+      height: calc(90svh - 4rem);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      position: relative;
+
+      .user-icon {
+        display: block;
+        font-size: 6rem;
+        margin: 3rem;
+        border-radius: 7rem;
+      }
+
+      label {
+        font-family: variables.$Montserrat;
+        font-weight: 600;
+        align-self: flex-start;
+        margin: 2rem 0 0 0;
+      }
+
+      .input-wrapper {
+        align-self: flex-start;
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        input {
+          width: 100%;
+          background: transparent;
+          font-family: variables.$Montserrat;
+          font-weight: 500;
+          border: none;
+          margin: 1rem 0 1rem 0;
+          padding: 5px;
+        }
+
+        svg {
+          display: inline;
+          margin-left: -2rem;
+          padding-bottom: 5px;
+        }
+
+      }
+
+      .form-error-msg {
+        text-align: center;
+        color: colors.$error;
+        font-size: 1rem;
+        font-family: variables.$Montserrat;
+        font-weight: 600;
+      }
+
+      .form-btn {
+        padding: 1.5rem 3rem;
+        width: 70%;
+        margin: 2rem 0 2rem 0;
+        border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 600;
+        font-family: variables.$Montserrat;
+        opacity: 80%;
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+          background: colors.$light-start-btn-hover;
+          box-shadow:  0 0 20px rgba(0, 0, 0, 1);
+        }
+      }
+
+
+    }
+
+    p {
+      text-align: center;
+
+      span {
+        font-weight: 800;
+        cursor: pointer;
+      }
+    }
+  }
+
+
+
+  .modal {
+    width: 100%;
+    height: 65svh;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    z-index: 101;
+    left: 0;
+    top: 2.5rem;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 2rem;
+
+    .modal-icon {
+      display: block;
+      font-size: 8rem;
+      margin: 3rem;
+      box-shadow: 3px 5px 10px colors.$light-btn-shadow;
+      border-radius: 7rem;
+    }
+
+    .modal-info {
+      font-family: variables.$Montserrat;
+      font-weight: 500;
+      font-size: 1.5rem;
+      margin: 2rem;
+    }
+
+    .modal-btn {
+      padding: 1.5rem 3rem;
+      width: 70%;
+      margin: 4rem 0 2rem 0;
+      border: none;
+      border-radius: 10px;
+      background: colors.$light-start-btn;
+      font-size: 1rem;
+      color: white;
+      font-weight: 600;
+      font-family: variables.$Montserrat;
+      opacity: 80%;
+      transition: 0.2s ease-in-out;
+    }
+  }
+
+}
+
+//  .login-modal {
+//    padding: 2rem;
+//    display: flex;
+//    flex-direction: column;
+//    justify-content: center;
+//    align-items: center;
+//    color: white;
+//    font-family: variables.$Exo;
+//
+//
+//    .modal-title {
+//      font-size: 2.2rem;
+//      font-weight: 600;
+//      margin-bottom: 2rem;
+//    }
+//
+//    form {
+//      display: block;
+//      margin-bottom: 2rem;
+//
+//      input {
+//        position: relative;
+//        width: 100%;
+//        color: white;
+//        background: transparent;
+//        font-family: variables.$Exo;
+//        border: none;
+//        border-bottom: 1px solid white;
+//        margin: 1rem auto 2rem auto;
+//        padding: 5px;
+//      }
+//
+//      svg {
+//        margin-left: -20px;
+//        padding-bottom: 5px;
+//      }
+//
+//      .submit-btn {
+//        padding: 1.5rem 3rem;
+//        width: 100%;
+//        margin-top: 1rem;
+//        border: none;
+//        border-radius: 10px;
+//        background: colors.$main;
+//        font-size: 1rem;
+//        color: white;
+//        font-weight: 400;
+//        font-family: variables.$Exo;
+//        opacity: 80%;
+//        transition: 0.2s ease-in-out;
+//
+//        &:hover {
+//          background: white;
+//          color: colors.$main;
+//          box-shadow:  0 0 20px rgba(0, 0, 0, 1);
+//        }
+//      }
+//
+//    }
+//
+//    p {
+//      text-align: center;
+//
+//      span {
+//        font-weight: 800;
+//        cursor: pointer;
+//      }
+//    }
+//  }
+//}

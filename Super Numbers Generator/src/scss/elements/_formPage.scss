@@ -24,7 +24,7 @@
   }
 
   .form-container {
-    margin-top: 4rem;
+    margin-top: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,13 +36,13 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem;
+      padding: 1rem;
       position: relative;
 
       .user-icon {
         display: block;
         font-size: 6rem;
-        margin: 3rem;
+        margin: 1.5rem;
         border-radius: 7rem;
       }
 
@@ -50,7 +50,7 @@
         font-family: variables.$Montserrat;
         font-weight: 600;
         align-self: flex-start;
-        margin: 2rem 0 0 0;
+        margin: 1rem 0 0 0;
       }
 
       .input-wrapper {
@@ -64,6 +64,7 @@
           background: transparent;
           font-family: variables.$Montserrat;
           font-weight: 500;
+          border-radius: 0;
           border: none;
           margin: 1rem 0 1rem 0;
           padding: 5px;
@@ -86,7 +87,7 @@
       }
 
       .form-btn {
-        padding: 1.5rem 3rem;
+        padding: 1.5rem 1.5rem;
         width: 70%;
         margin: 2rem 0 2rem 0;
         border: none;
@@ -127,7 +128,7 @@
     backdrop-filter: blur(15px);
     z-index: 101;
     left: 0;
-    top: 2.5rem;
+    top: 2rem;
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
@@ -138,7 +139,7 @@
     .modal-icon {
       display: block;
       font-size: 8rem;
-      margin: 3rem;
+      margin: 1rem;
       box-shadow: 3px 5px 10px colors.$light-btn-shadow;
       border-radius: 7rem;
     }
@@ -146,14 +147,14 @@
     .modal-info {
       font-family: variables.$Montserrat;
       font-weight: 500;
-      font-size: 1.5rem;
-      margin: 2rem;
+      font-size: 1rem;
+      margin: 1rem;
     }
 
     .modal-btn {
       padding: 1.5rem 3rem;
       width: 70%;
-      margin: 4rem 0 2rem 0;
+      margin: 2rem 0 1rem 0;
       border: none;
       border-radius: 10px;
       background: colors.$light-start-btn;

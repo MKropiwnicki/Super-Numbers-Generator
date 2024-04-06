@@ -11,6 +11,6 @@ export const StartBtn = () => {
     }
 
     return(
-            <button className='start-btn' onClick={handleStart}>Start</button>
+            <button className='homePage-btn' onClick={handleStart}>Start</button>
     )
 }

@@ -8,6 +8,6 @@ export const LoginBtn = () => {
     }
 
     return(
-        <button className='login-btn' onClick={handleLogin}>Login</button>
+        <button className='homePage-btn' onClick={handleLogin}>Login</button>
     )
 }

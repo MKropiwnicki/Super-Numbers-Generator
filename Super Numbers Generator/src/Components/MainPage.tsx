@@ -21,6 +21,7 @@ export const MainPage = ({visibility}: MainPageProps) => {
                                                    transition={{easeInOut, duration: 0.8}}
                                                    exit={{y: 0, opacity: 0}}
                                                    className='body-container'>
+                            <h1 className='homePage-title'>Welcome to Super Numbers Generator!</h1>
                             <Start />
                             <Divider/>
                             <Login/>

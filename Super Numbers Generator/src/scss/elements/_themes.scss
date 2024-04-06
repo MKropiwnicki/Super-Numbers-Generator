@@ -200,6 +200,10 @@
 
 }
 
+#light .homePage-title {
+  color: colors.$light-main-color;
+}
+
 #light .start-btn, .login-btn {
   background: colors.$light-start-btn;
   border: 0.5px solid colors.$light-btn-border-color;
@@ -343,6 +347,32 @@
   color: colors.$accent-color;
   border-bottom: 1px solid colors.$accent-color;
 }
+
+#light .homePage-tile {
+  box-shadow: 3px 5px 10px colors.$light-btn-shadow;
+  background: colors.$light-border-color;
+}
+
+#dark .homePage-tile {
+  box-shadow: 0 0 10px colors.$dark-btn-glow;
+  background: colors.$light-border-color;
+}
+
+
+#light .homePage-btn {
+  color:  colors.$dark-main-color;
+  border: 2px solid colors.$dark-main-color;
+  background: colors.$light-main-color;
+  box-shadow: 3px 5px 10px colors.$light-btn-shadow;
+}
+
+#dark .homePage-btn {
+  box-shadow: 0 0 10px colors.$dark-btn-glow;
+  color:  colors.$light-main-color;
+  border: 2px solid colors.$light-main-color;
+  background: colors.$accent-color;
+}
+
 
 #dark label {
   color: colors.$dark-main-color;

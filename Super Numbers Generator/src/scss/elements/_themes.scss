@@ -252,16 +252,17 @@
 }
 
 #light .mobile-menu-tile {
-  background: colors.$light-start-btn;
-  border: 2px solid colors.$light-btn-border-color;
-  box-shadow: 3px 5px 10px colors.$light-btn-shadow;
+  background: linear-gradient(180deg, rgba(255, 255, 255,0) 60%, colors.$light-start-btn 100%);
+  border-bottom: 2px solid colors.$light-btn-border-color;
+  -webkit-box-shadow: 0 8px 10px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0 8px 10px rgba(0, 0, 0, 1);
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 1);
   color: colors.$light-main-color;
 }
 
 #dark .mobile-menu-tile {
-  background: colors.$light-start-btn;
-  border: 2px solid colors.$light-btn-border-color;
-  box-shadow: 0 0 10px colors.$dark-btn-glow;
+  background: linear-gradient(180deg, rgba(255, 255, 255,0) 40%, colors.$light-start-btn 100%);
+  border-bottom: 2px solid colors.$light-btn-border-color;
   color: colors.$dark-main-color;
 }
 
@@ -391,6 +392,77 @@
 }
 
 #dark .user-icon {
+  box-shadow: 0 0 10px colors.$dark-main-color;
+}
+
+#light .generator-container {
+  background: colors.$light-start-btn;
+  box-shadow: 3px 5px 10px colors.$light-btn-shadow;
+}
+
+#dark .generator-container {
+  background: linear-gradient(180deg, rgba(255, 255, 255,0) 40%, colors.$light-start-btn 100%);
+  border-bottom: 1px solid colors.$accent-color;
+}
+
+#light .numbers-wrapper {
+  background: colors.$light-start-btn;
+  box-shadow: 3px 5px 10px colors.$light-btn-shadow;
+}
+
+#dark .numbers-wrapper {
+  background: colors.$light-start-btn;
+  border: 1px solid colors.$accent-color;
+}
+
+#light .number-circle {
+  background: colors.$switch-btn-light;
+  box-shadow: 3px 5px 10px colors.$light-btn-shadow;
+  border: 3px solid colors.$light-main-color;
+}
+
+#dark .number-circle {
+  border: 1px solid colors.$accent-color;
+  background: rgba(0 , 0 , 128, 0.4);
+  box-shadow: inset 0 0 10px rgba(colors.$light-btn-shadow, 1);
+}
+
+
+#light .grid-circle {
+  background: colors.$light-start-btn;
+  box-shadow: 3px 5px 10px colors.$light-btn-shadow;
+}
+
+#dark .grid-circle {
+  border-bottom: 1px solid colors.$accent-color;
+  background: rgba(0 , 0 , 128, 0.4);
+  box-shadow: inset 0 0 10px rgba(colors.$light-btn-shadow, 1);
+}
+
+#light .selected {
+  color: rgba(0 , 0 , 128, 1);
+  background: orange;
+  box-shadow: 0 0 10px rgba(0 , 0 , 128, 1);
+}
+
+#dark .selected {
+  color: rgba(0 , 0 , 128, 1);
+  background: orange;
+  box-shadow: 0 0 10px rgba(0 , 0 , 128, 1);
+}
+
+
+#light .generator-btn {
+  background: colors.$switch-btn-light;
+  color: colors.$dark-main-color;
+  border: 2px solid colors.$light-btn-border-color;
+  box-shadow: 3px 5px 10px colors.$light-btn-shadow;
+}
+
+#dark .generator-btn {
+  background: colors.$light-main-color;
+  color: colors.$dark-main-color;
+  border: 2px solid colors.$dark-main-color;
   box-shadow: 0 0 10px colors.$dark-main-color;
 }
 

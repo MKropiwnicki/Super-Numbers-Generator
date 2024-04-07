@@ -62,8 +62,8 @@ const handleGenerate = (e: FormEvent) => {
         }
     };
 
-    const item = {
-        hidden: { y: 20, opacity: 0 },
+    const itemBtn = {
+        hidden: { y: 0, opacity: 0 },
         visible: {
             y: 0,
             opacity: 1
@@ -99,17 +99,17 @@ const handleGenerate = (e: FormEvent) => {
         <AnimatePresence>
             <motion.div className='generator-wrapper'
                         key={"wrapper"}
-                        initial={{y: 1000, opacity: 0}}
+                        initial={{y: 0, opacity: 0}}
                         animate={{y: 0, opacity: 1}}
                         transition={{easeInOut, duration: 0.5}}
-                        exit={{y: 1000, opacity: 0}}
+                        exit={{y: 0, opacity: 0}}
                         variants={container}>
                 <motion.div className='generator-container'
                             key={"generator"}
-                            initial={{y: 1000, opacity: 0}}
+                            initial={{y: 0, opacity: 0}}
                             animate={{y: 0, opacity: 1}}
                             transition={{easeInOut, duration: 0.5}}
-                            exit={{y: 1000, opacity: 0}}
+                            exit={{y: 0, opacity: 0}}
                             variants={container}>
                     <motion.div className='form-container'>
                         <motion.form className='numbers-form'
@@ -141,7 +141,7 @@ const handleGenerate = (e: FormEvent) => {
                                     id='amount'
                                     placeholder=''/>
                             </motion.div>
-                            <motion.button variants={item} className={`generator-btn ${refreshed}`} onClick={handleGenerate}
+                            <motion.button variants={itemBtn} className={`generator-btn ${refreshed}`} onClick={handleGenerate}
                                            type='submit'>{btnContent}
                             </motion.button>
                         </motion.form>

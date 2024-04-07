@@ -28,7 +28,7 @@ export const GeneratedNumbers = ({dataToRender, amount, max}: GeneratedNumbersPr
     };
 
     return (
-        <>
+        <motion.div className='numbers-wrapper'>
             <motion.h2>Your numbers:</motion.h2>
             <motion.ul className='numbers-box'
                        key={"list"}
@@ -43,7 +43,7 @@ export const GeneratedNumbers = ({dataToRender, amount, max}: GeneratedNumbersPr
                 ))}
             </motion.ul>
             <motion.h3>{amount} out of {max}</motion.h3>
-        </>
+        </motion.div>
 
     )
 }

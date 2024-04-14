@@ -72,6 +72,7 @@ export const LoginPage = ({visibilitySwitch, logSwitch}: LoginPageProps) => {
         } catch (e) {
             setError((e as Error).message)
             console.log(error)
+            setErrorModal(true);
             // isLogOk = false;
             reset()
         }
@@ -122,7 +123,7 @@ export const LoginPage = ({visibilitySwitch, logSwitch}: LoginPageProps) => {
                         <button className='form-btn' type='submit'>Login</button>
                         <p>Don&apos;t have an account? <span onClick={handleRegister}>Register</span></p>
                         {errorModal && (
-                            <motion.div key={"registerError"}
+                            <motion.div key={"loginError"}
                                         initial={{y: 0, opacity: 0}}
                                         animate={{y: 0, opacity: 1}}
                                         transition={{easeInOut, duration: 0.2}}

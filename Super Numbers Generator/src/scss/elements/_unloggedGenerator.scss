@@ -2,12 +2,12 @@
 
 
 .generator-wrapper{
-  height: 100svh;
+  height: 100vh;
   width: 100%;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 1rem 1rem;
-  overflow: auto;
+  overflow: scroll;
 
   h2, h3 {
     text-align: center;
@@ -72,14 +72,14 @@
         width: auto;
         height: auto;
         max-width: 60%;
-        margin: 2rem auto;
+        margin: 1rem auto;
         border: none;
         border-radius: 10px;
         font-size: 1rem;
         font-weight: 600;
         font-family: variables.$Montserrat;
         opacity: 80%;
-        transition: 0.2s ease-in-out;
+        //transition: 0.2s ease-in-out;
 
         p {
           font-size: 1.4rem;
@@ -151,17 +151,18 @@
   .numbers-grid {
     margin-top: 1.5rem;
     width: 100%;
-    height: 30svh;
+    height: 30vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    overflow: scroll;
-    padding: 1rem 1rem 0 1rem;
+    overflow: auto;
+    padding: 0.5rem 0.5rem 0 0.5rem;
 
 
     @media  screen and (min-width: 412px){
-      height: 40svh;
+      height: 40vh;
+      //overflow: scroll;
     }
 
     .grid-circle {
@@ -176,7 +177,6 @@
       font-size: 0.9rem;
       font-weight: 700;
       transition: 0.5s ease-in-out;
-      overflow: scroll;
 
       @media  screen and (min-width: 412px){
         width: 2.2rem;

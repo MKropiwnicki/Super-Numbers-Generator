@@ -62,13 +62,13 @@ const handleGenerate = (e: FormEvent) => {
         }
     };
 
-    const itemBtn = {
-        hidden: { y: 0, opacity: 0 },
-        visible: {
-            y: 0,
-            opacity: 1
-        }
-    };
+    // const itemBtn = {
+    //     hidden: { y: 0, opacity: 0 },
+    //     visible: {
+    //         y: 0,
+    //         opacity: 1
+    //     }
+    // };
 
     const containerForm = {
         hidden: { opacity: 1, scale: 0 },
@@ -89,6 +89,12 @@ const handleGenerate = (e: FormEvent) => {
             opacity: 1
         }
     };
+
+    // const spring = {
+    //     type: "spring",
+    //     stiffness: 800,
+    //     damping: 25
+    // };
 
     const grid = () => {
         setGridData(gridGenerator(rangeMinimum, rangeMaximum))
@@ -141,7 +147,13 @@ const handleGenerate = (e: FormEvent) => {
                                     id='amount'
                                     placeholder=''/>
                             </motion.div>
-                            <motion.button variants={itemBtn} className={`generator-btn ${refreshed}`} onClick={handleGenerate}
+                            <motion.button className={`generator-btn ${refreshed}`}
+                                           key={"formBtn"}
+                                           // initial={{y: 0, opacity: 0}}
+                                           // animate={{y: 0, opacity: 1}}
+                                           // exit={{y: 0, opacity: 0}}
+                                           onClick={handleGenerate}
+                                           layout transition={{duration: 0.1}}
                                            type='submit'>{btnContent}
                             </motion.button>
                         </motion.form>

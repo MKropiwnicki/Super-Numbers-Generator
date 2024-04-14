@@ -351,19 +351,19 @@
 
 #light .homePage-tile {
   box-shadow: 3px 5px 10px colors.$light-btn-shadow;
-  background: colors.$light-border-color;
+  //background: colors.$light-border-color;
 }
 
 #dark .homePage-tile {
   box-shadow: 0 0 10px colors.$dark-btn-glow;
-  background: colors.$light-border-color;
+  //background: colors.$light-border-color;
 }
 
 
 #light .homePage-btn {
-  color:  colors.$dark-main-color;
-  border: 2px solid colors.$dark-main-color;
-  background: colors.$light-main-color;
+  color:  colors.$accent-color;
+  border: 2px solid colors.$light-main-color;
+  background: rgba(colors.$light-main-color, 0.1);
   box-shadow: 3px 5px 10px colors.$light-btn-shadow;
 }
 

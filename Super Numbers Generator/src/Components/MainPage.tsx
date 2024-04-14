@@ -1,7 +1,7 @@
 import { motion, AnimatePresence,easeInOut } from "framer-motion"
-import { Start } from "./Start.tsx";
-import { Divider } from "./Divider.tsx";
-import { Login } from "./Login.tsx";
+import { NumberBall } from "./NumberBall.tsx";
+import {StartBtn} from "./StartBtn.tsx";
+// import {LoginBtn} from "./LoginBtn.tsx";
 
 type MainPageProps = {
     visibility: boolean
@@ -21,10 +21,13 @@ export const MainPage = ({visibility}: MainPageProps) => {
                                                    transition={{easeInOut, duration: 0.8}}
                                                    exit={{y: 0, opacity: 0}}
                                                    className='body-container'>
+                            <NumberBall/>
                             <h1 className='homePage-title'>Welcome to Super Numbers Generator!</h1>
-                            <Start />
-                            <Divider/>
-                            <Login/>
+                            <p className='homePage-text'>You can quick start or login and use extra features.</p>
+                            <div className='btns-container'>
+                                <StartBtn/>
+                                {/*<LoginBtn/>*/}
+                            </div>
                         </motion.div>}
                     </motion.div>
                 </AnimatePresence>

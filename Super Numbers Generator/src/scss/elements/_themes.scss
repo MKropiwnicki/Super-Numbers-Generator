@@ -426,6 +426,7 @@
   border: 1px solid colors.$accent-color;
   background: rgba(0 , 0 , 128, 0.4);
   box-shadow: inset 0 0 10px rgba(colors.$light-btn-shadow, 1);
+
 }
 
 
@@ -440,10 +441,19 @@
   box-shadow: inset 0 0 10px rgba(colors.$light-btn-shadow, 1);
 }
 
+//#light .selected {
+//  color: colors.$light-main-color;
+//  background: colors.$accent-color;
+//  box-shadow: 3px 5px 10px colors.$light-btn-shadow;
+//}
+
 #light .selected {
-  color: colors.$accent-color;
-  background: colors.$dark-main-color;
-  box-shadow: 3px 5px 10px colors.$light-btn-shadow;
+  background: colors.$accent-color;
+  box-shadow: 0 0 10px rgba(colors.$light-main-color, 1);
+
+  p{
+    color: colors.$dark-main-color;
+  }
 }
 
 #dark .selected {

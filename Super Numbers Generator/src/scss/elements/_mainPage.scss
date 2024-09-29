@@ -202,6 +202,7 @@
         font-family: variables.$Montserrat;
         font-weight: 800;
         font-style: italic;
+
       }
 
       .menu-container {
@@ -265,26 +266,41 @@
       justify-content: space-around;
 
       .ball-border {
-        width: 15rem;
-        height: 15rem;
+        width: 10rem;
+        height: 10rem;
         border-radius: 20rem;
         display: flex;
         justify-content: center;
         align-items: center;
 
         p {
-          font-size: 5rem;
+          font-size: 3rem;
           font-family: variables.$Montserrat;
           font-weight: 800;
+        }
+
+        @media  screen and (min-width: 412px){
+          width: 15rem;
+          height: 15rem;
+
+          p {
+            font-size: 5rem;
+          }
+
         }
 
       }
 
       .homePage-title, .homePage-text {
-        font-size: 1.9rem;
+        font-size: 1.2rem;
         font-family: variables.$Montserrat;
         font-weight: 800;
         text-align: center;
+
+        @media  screen and (min-width: 412px){
+          font-size: 1.9rem;
+        }
+
       }
 
       .homePage-text {

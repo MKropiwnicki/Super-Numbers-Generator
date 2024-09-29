@@ -9,13 +9,26 @@ import { useState } from "react";
 import { NavBar } from "./Components/NavBar.tsx";
 import { AuthContextProvider } from "./Context/AuthContext2.tsx";
 import { ProtectedRoute} from "./Components/ProtectedRoute.tsx";
-import {Dashboard} from "./Components/Dashboard.tsx";
+import { Dashboard } from "./Components/Dashboard.tsx";
+// import { QuickSetMenu } from "./Components/QuickSetMenu.tsx";
+import { OptionPage } from "./Components/OptionPage.tsx";
+import { OptionPageDouble } from "./Components/OptionPageDouble.tsx";
 
 export const App = () => {
 
     const [theme, setTheme] = useLocalStorage('theme', 'light');
     const [visibility, setVisibility] = useState(true);
+    const [optionsVisibility, setOptionsVisibility] = useState<boolean>(false);
     const [isLogged, setIsLogged] = useState<boolean>(false);
+    const [rangeMinimum, setRangeMinimum] = useState<number | null>(null);
+    const [rangeMaximum, setRangeMaximum] = useState<number | null>(null);
+    const [amount, setAmount] = useState<number | null>(null);
+    const [rangeMinimumAdditional, setRangeMinimumAdditional] = useState<number | null>(null);
+    const [rangeMaximumAdditional, setRangeMaximumAdditional] = useState<number | null>(null);
+    const [amountAdditional, setAmountAdditional] = useState<number | null>(null);
+
+
+
 
 
     const handleTheme = () => {
@@ -76,17 +89,27 @@ export const App = () => {
                                                <>
                                                    <NavBar visibility={visibility} visibilitySwitch={setVisibility}
                                                            themeToggle={handleTheme} theme={theme}/>
-                                                   <MainPage visibility={visibility}/>
+                                                   <MainPage visibility={visibility}
+                                                             visibilitySwitch={setVisibility}
+                                                             optionsVisibility={optionsVisibility}
+                                                             optionsVisibilitySwitch={setOptionsVisibility}
+                                                             minimumDeclaration={setRangeMinimum}
+                                                             maximumDeclaration={setRangeMaximum}
+                                                             amountDeclaration={setAmount}
+                                                             minimumSecondaryDeclaration={setRangeMinimumAdditional}
+                                                             maximumSecondaryDeclaration={setRangeMaximumAdditional}
+                                                             amountSecondaryDeclaration={setAmountAdditional}
+                                                   />
                                                </>
 
                                            }
                                     />
                                     <Route
-                                        path='/unloggedGenerator'
+                                        path='/customGenerator'
                                         element={
                                             <>
-                                                <NavBar visibility={visibility} visibilitySwitch={setVisibility}
-                                                        themeToggle={handleTheme} theme={theme}/>
+                                                {/*<NavBar visibility={visibility} visibilitySwitch={setVisibility}*/}
+                                                {/*        themeToggle={handleTheme} theme={theme}/>*/}
                                                 <UnloggedGenerator/>
                                             </>
                                         }
@@ -102,6 +125,38 @@ export const App = () => {
                                         element={
                                             <RegisterPage visibilitySwitch={setVisibility} logStatus={isLogged}
                                                           logSwitch={setIsLogged}/>
+                                        }
+                                    />
+                                    <Route
+                                        path='/quickMenu'
+                                        element={
+                                            <>
+                                                <NavBar visibility={visibility} visibilitySwitch={setVisibility}
+                                                        themeToggle={handleTheme} theme={theme}/>
+                                            </>
+                                        }
+                                    />
+                                    <Route
+                                        path='/quickSet'
+                                        element={
+                                            <>
+                                                <OptionPage rangeMinimum={rangeMinimum} rangeMaximum={rangeMaximum} amount={amount}/>
+                                            </>
+                                        }
+                                    />
+                                    <Route
+                                        path='/quickSetDouble'
+                                        element={
+                                            <>
+                                                <OptionPageDouble rangeMinimum={rangeMinimum}
+                                                                  rangeMaximum={rangeMaximum}
+                                                                  amount={amount}
+                                                                  rangeMinimumAdditional={rangeMinimumAdditional}
+                                                                  rangeMaximumAdditional={rangeMaximumAdditional}
+                                                                  amountAdditional={amountAdditional}
+
+                                                />
+                                            </>
                                         }
                                     />
                                     <Route

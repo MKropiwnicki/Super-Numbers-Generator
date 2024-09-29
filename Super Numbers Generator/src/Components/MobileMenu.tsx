@@ -56,7 +56,7 @@ export const MobileMenu = () => {
                                 initial="hidden"
                                 animate="visible"
                                 onClick={handleLogin}>
-                        <FontAwesomeIcon icon={faUserPlus} className={'menu-icon'}/>
+                        <FontAwesomeIcon icon={faUserCheck} className={'menu-icon'}/>
                         <p>Login</p>
                     </motion.div>
                     <motion.div className={'mobile-menu-tile'}
@@ -65,7 +65,7 @@ export const MobileMenu = () => {
                                 initial="hidden"
                                 animate="visible"
                                 onClick={handleRegister}>
-                        <FontAwesomeIcon icon={faUserCheck} className={'menu-icon'}/>
+                        <FontAwesomeIcon icon={faUserPlus} className={'menu-icon'}/>
                         <p>Register</p>
                     </motion.div>
                 </motion.div>

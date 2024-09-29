@@ -3,9 +3,10 @@ import { motion, AnimatePresence, easeInOut } from "framer-motion";
 import { numbersGenerator } from '../numbersGenerator.js'
 import { gridGenerator } from '../gridGenerator.js'
 import { NumbersGrid } from "./NumbersGrid.tsx";
-import {GeneratedNumbers} from "./GeneratedNumbers.tsx";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowsRotate} from "@fortawesome/free-solid-svg-icons";
+import {faArrowsRotate, faCircleArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import {GeneratedNumbersCustom} from "./GeneratedNumbersCustom.tsx";
+import {useNavigate} from "react-router-dom";
 
 
 
@@ -37,6 +38,11 @@ const handleGenerate = (e: FormEvent) => {
     }
 }
 
+    const navigate = useNavigate();
+
+    const handleHome = () => {
+        navigate('/');
+    }
 
 
     let btnContent;
@@ -110,6 +116,9 @@ const handleGenerate = (e: FormEvent) => {
                         transition={{easeInOut, duration: 0.5}}
                         exit={{y: 0, opacity: 0}}
                         variants={container}>
+                <div className='bar'>
+                    <FontAwesomeIcon icon={faCircleArrowLeft} className={'back-icon'} onClick={handleHome}/>
+                </div>
                 <motion.div className='generator-container'
                             key={"generator"}
                             initial={{y: 0, opacity: 0}}
@@ -125,7 +134,8 @@ const handleGenerate = (e: FormEvent) => {
                             <motion.div
                                 variants={itemForm}>
                                 <label htmlFor='range-min'>Minimum:</label>
-                                <input value={rangeMinimum?.toString()} onChange={(e) => setRangeMinimum(+e.target.value)}
+                                <input value={rangeMinimum?.toString()}
+                                       onChange={(e) => setRangeMinimum(+e.target.value)}
                                        type='number'
                                        id='range-min'
                                        placeholder=''/>
@@ -133,7 +143,8 @@ const handleGenerate = (e: FormEvent) => {
                             <motion.div
                                 variants={itemForm}>
                                 <label htmlFor='range-max'>Maximum:</label>
-                                <input value={rangeMaximum?.toString()} onChange={(e) => setRangeMaximum(+e.target.value)}
+                                <input value={rangeMaximum?.toString()}
+                                       onChange={(e) => setRangeMaximum(+e.target.value)}
                                        type='number'
                                        id='range-max'
                                        placeholder=''/>
@@ -149,9 +160,9 @@ const handleGenerate = (e: FormEvent) => {
                             </motion.div>
                             <motion.button className={`generator-btn ${refreshed}`}
                                            key={"formBtn"}
-                                           // initial={{y: 0, opacity: 0}}
-                                           // animate={{y: 0, opacity: 1}}
-                                           // exit={{y: 0, opacity: 0}}
+                                // initial={{y: 0, opacity: 0}}
+                                // animate={{y: 0, opacity: 1}}
+                                // exit={{y: 0, opacity: 0}}
                                            onClick={handleGenerate}
                                            layout transition={{duration: 0.1}}
                                            type='submit'>{btnContent}
@@ -159,7 +170,8 @@ const handleGenerate = (e: FormEvent) => {
                         </motion.form>
                     </motion.div>
                 </motion.div>
-                {numbersList && <GeneratedNumbers dataToRender={dataToRender} amount={amount} max={rangeMaximum}/>}
+                {numbersList &&
+                    <GeneratedNumbersCustom dataToRender={dataToRender} amount={amount} max={rangeMaximum}/>}
                 {numbersGrid && <NumbersGrid data={gridData} selectedNumbers={dataToRender}/>}
             </motion.div>
         </AnimatePresence>

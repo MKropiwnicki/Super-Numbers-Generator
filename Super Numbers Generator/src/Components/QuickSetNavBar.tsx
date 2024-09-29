@@ -6,14 +6,14 @@ import { motion, AnimatePresence } from "framer-motion"
 import {useNavigate} from "react-router-dom";
 
 
-type NavBarProps = {
+type QuickSetNavBarProps = {
     visibility: boolean,
     visibilitySwitch: React.Dispatch<boolean>,
     themeToggle: React.Dispatch<void>,
     theme: string
 }
 
-export const NavBar = ({visibility, visibilitySwitch, themeToggle, theme}: NavBarProps) => {
+export const QuickSetNavBar = ({visibility, visibilitySwitch, themeToggle, theme}: QuickSetNavBarProps) => {
 
     const navigate = useNavigate();
 
@@ -21,7 +21,7 @@ export const NavBar = ({visibility, visibilitySwitch, themeToggle, theme}: NavBa
         navigate('/quickMenu');
     }
 
-    const [clicked, setClicked] = useState<boolean>(false);
+    const [clicked, setClicked] = useState(false)
 
     return(
         <>

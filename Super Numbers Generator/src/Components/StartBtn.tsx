@@ -7,7 +7,7 @@ export const StartBtn = () => {
 
     const navigate = useNavigate();
     const handleStart = () => {
-        navigate('/unloggedGenerator');
+        navigate('/quickMenu');
     }
 
     return(

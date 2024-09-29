@@ -9,25 +9,42 @@
   padding: 1rem 1rem;
   overflow: scroll;
 
+  .bar {
+    background: transparent;
+    padding: 1rem;
+    width: 100%;
+    height: 2rem;
+    flex-wrap: wrap;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+
+    .back-icon {
+      display: block;
+      font-size: 2rem;
+    }
+  }
+
   h2, h3 {
     text-align: center;
     font-family: variables.$Montserrat;
     font-size: 1.2rem;
     font-weight: 700;
-    margin: 1.5rem 0 1rem 0;
+    margin: 0 auto 0.9rem auto;
   }
 
   h3 {
-    margin-top: 1.5rem;
+    margin-top: 0.9rem;
     font-size: 0.7rem;
   }
 
   .generator-container {
     height: auto;
     width: 100%;
-    border-radius: 0px 0px 20px 20px;
+    border-radius: 0 0 20px 20px;
 
     .form-container {
+      margin-top: 2rem;
 
       .numbers-form {
         display: flex;
@@ -68,7 +85,7 @@
       }
 
       .generator-btn {
-        padding: 1.5rem 1.5rem;
+        padding: 1rem 1rem;
         width: auto;
         height: auto;
         max-width: 60%;
@@ -82,7 +99,7 @@
         //transition: 0.2s ease-in-out;
 
         p {
-          font-size: 1.4rem;
+          font-size: 1.2rem;
           text-align: center;
         }
 
@@ -105,18 +122,43 @@
           font-family: variables.$Gluten;
           font-size: 2rem;
           text-align: center;
-          color: rgba(0 , 0 , 128, 0.9);
+          color: white;
         }
       }
     }
   }
 
+  .numbers-text {
+    margin: 0.5rem auto 0.9rem auto;
+  }
+
   .numbers-wrapper {
-    margin-top: 1rem;
+    margin-top: 0;
     padding: 1rem;
     width: auto;
     height: auto;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    .arrows {
+      padding: 1.3rem 1.3rem;
+      border-radius: 10rem;
+
+      .refresh-icon {
+        display: block;
+        font-family: variables.$Gluten;
+        font-size: 2rem;
+        text-align: center;
+        color: white;
+      }
+    }
+
+    .option {
+      padding: 0.75rem;
+    }
 
     .numbers-box {
       width: 100%;
@@ -126,6 +168,7 @@
       justify-content: center;
       flex-wrap: wrap;
       border-radius: 20px;
+      padding: 0.5rem 0 1rem 0;
 
       .number-circle {
         width: 2.9rem;
@@ -143,7 +186,7 @@
 
 
     h2, h3 {
-      margin: 0.9rem auto;
+      margin: 0 auto 0.9rem auto;
     }
   }
 
@@ -151,14 +194,13 @@
   .numbers-grid {
     margin-top: 1.5rem;
     width: 100%;
-    height: 30vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     overflow: auto;
     padding: 0.5rem 0.5rem 10rem;
-
 
     @media  screen and (min-width: 412px){
       height: 40vh;
@@ -184,5 +226,17 @@
         height: 2.2rem;
       }
     }
+  }
+
+  .double {
+    padding: 0.5rem 0.5rem 1rem;
+  }
+
+  .secondary {
+    margin-top: 0;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    width: 100%;
+    height: auto;
   }
 }

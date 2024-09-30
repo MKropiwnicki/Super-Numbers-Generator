@@ -1,11 +1,22 @@
 import { motion } from "framer-motion";
+import {useEffect, useState} from "react";
 
 type GeneratedNumbersCustomProps = {
     dataToRender: Array<number>,
     amount: number | null,
-    max: number | null
+    max: number | null,
+    min: number | null
 }
-export const GeneratedNumbersCustom = ({dataToRender, amount, max}: GeneratedNumbersCustomProps) => {
+export const GeneratedNumbersCustom = ({dataToRender, amount, max, min}: GeneratedNumbersCustomProps) => {
+
+    const [range, setRange] = useState<number>(0)
+
+    useEffect(() => {
+        if (amount !== null && min !== null && max !== null) {
+           setRange(max - min +1)
+        }
+    }, [amount, min, max]);
+
 
     const containerNumbers = {
         hidden: { opacity: 1, scale: 0 },
@@ -42,7 +53,7 @@ export const GeneratedNumbersCustom = ({dataToRender, amount, max}: GeneratedNum
                     </motion.li>
                 ))}
             </motion.ul>
-            <motion.h3 className='numbers-text'>{amount} out of {max}</motion.h3>
+            <motion.h3 className='numbers-text'>{amount} out of {range}</motion.h3>
         </motion.div>
 
     )

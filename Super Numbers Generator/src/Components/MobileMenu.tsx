@@ -1,5 +1,5 @@
 import {motion, easeInOut, AnimatePresence} from "framer-motion"
-import {faUserPlus, faUserCheck} from "@fortawesome/free-solid-svg-icons";
+import {faUserPlus, faUserCheck, faAt, faCircleInfo} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useNavigate} from "react-router-dom";
 
@@ -67,6 +67,24 @@ export const MobileMenu = () => {
                                 onClick={handleRegister}>
                         <FontAwesomeIcon icon={faUserPlus} className={'menu-icon'}/>
                         <p>Register</p>
+                    </motion.div>
+                    <motion.div className={'mobile-menu-tile'}
+                                variants={itemTile}
+                                key={'contactTile'}
+                                initial="hidden"
+                                animate="visible"
+                                onClick={handleRegister}>
+                        <FontAwesomeIcon icon={faAt} className={'menu-icon'}/>
+                        <p>Contact</p>
+                    </motion.div>
+                    <motion.div className={'mobile-menu-tile'}
+                                variants={itemTile}
+                                key={'aboutTile'}
+                                initial="hidden"
+                                animate="visible"
+                                onClick={handleRegister}>
+                        <FontAwesomeIcon icon={faCircleInfo} className={'menu-icon'}/>
+                        <p>About</p>
                     </motion.div>
                 </motion.div>
             </motion.div>

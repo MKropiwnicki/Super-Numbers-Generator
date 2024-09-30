@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import {useState, FormEvent, useEffect} from 'react';
 import { motion, AnimatePresence, easeInOut } from "framer-motion";
 import { numbersGenerator } from '../numbersGenerator.js'
 import { gridGenerator } from '../gridGenerator.js'
@@ -22,7 +22,26 @@ export const NumbersGenerator = () => {
     const [numbersList, setNumbersList] = useState(false);
     const [numbersGrid, setNumbersGrid] = useState(false);
     const [refreshIcon, setRefreshIcon] = useState(false);
+    const [alertRange, setAlertRange] = useState<boolean>(false);
+    const [alertAmount, setAlertAmount] = useState<boolean>(false)
 
+
+    useEffect(()=> {
+        if (rangeMinimum !== null && rangeMaximum !== null && amount !== null) {
+            const range = rangeMaximum - rangeMinimum;
+            if(range >= 200) {
+                setAlertRange(true);
+            } else {
+                setAlertRange(false);
+            }
+
+            if(amount > range) {
+                setAlertAmount(true);
+            } else {
+                setAlertAmount(false);
+            }
+        }
+    },[rangeMinimum, rangeMaximum, amount]);
 
 
 const handleGenerate = (e: FormEvent) => {
@@ -158,7 +177,7 @@ const handleGenerate = (e: FormEvent) => {
                                     id='amount'
                                     placeholder=''/>
                             </motion.div>
-                            <motion.button className={`generator-btn ${refreshed}`}
+                            <motion.button disabled={alertRange || alertAmount} className={`generator-btn ${refreshed}`}
                                            key={"formBtn"}
                                 // initial={{y: 0, opacity: 0}}
                                 // animate={{y: 0, opacity: 1}}
@@ -167,12 +186,15 @@ const handleGenerate = (e: FormEvent) => {
                                            layout transition={{duration: 0.1}}
                                            type='submit'>{btnContent}
                             </motion.button>
+
                         </motion.form>
+                        { alertRange && <p className='generator-alert'>Maximum number range of 200 reached!</p>}
+                        { alertAmount && <p className='generator-alert'>The number of numbers drawn is greater than the selected range!</p>}
                     </motion.div>
                 </motion.div>
-                {numbersList &&
-                    <GeneratedNumbersCustom dataToRender={dataToRender} amount={amount} max={rangeMaximum}/>}
-                {numbersGrid && <NumbersGrid data={gridData} selectedNumbers={dataToRender}/>}
+                {numbersList && !alertRange && !alertAmount && (
+                    <GeneratedNumbersCustom dataToRender={dataToRender} amount={amount} max={rangeMaximum} min={rangeMinimum}/>)}
+                {numbersGrid && !alertRange && !alertAmount && (<NumbersGrid data={gridData} selectedNumbers={dataToRender}/>)}
             </motion.div>
         </AnimatePresence>
     )

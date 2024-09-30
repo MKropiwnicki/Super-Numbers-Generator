@@ -253,13 +253,13 @@
 
 #light .mobile-menu-tile {
 
-  border-bottom: 2px solid colors.$light-btn-border-color;
+  //border-bottom: 2px solid colors.$light-btn-border-color;
   color: colors.$light-main-color;
 }
 
 #dark .mobile-menu-tile {
 
-  border-bottom: 2px solid colors.$light-btn-border-color;
+  //border-bottom: 2px solid colors.$light-btn-border-color;
   color: colors.$dark-main-color;
 }
 
@@ -478,4 +478,11 @@
   box-shadow: 0 0 10px colors.$dark-main-color;
 }
 
+#light .generator-alert {
+  color: red !important;
+}
+
+#dark .generator-alert {
+  color: red !important;
+}
 

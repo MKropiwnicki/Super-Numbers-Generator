@@ -189,6 +189,11 @@
         font-family: variables.$Montserrat;
         font-size: 1rem;
         font-weight: 700;
+
+        @media  screen and (min-width: 412px){
+          width: 3.2rem;
+          height: 3.2rem;
+        }
       }
     }
 
@@ -196,11 +201,26 @@
     h2, h3 {
       margin: 0 auto 0.9rem auto;
     }
+
+    h2 {
+      font-size: 1.2rem;
+
+      @media  screen and (min-width: 412px){
+        font-size: 1.8rem;
+      }
+    }
+
+    h3 {
+      font-size: 0.7rem;
+
+      @media  screen and (min-width: 412px){
+        font-size: 0.9rem;
+      }
+    }
   }
 
 
   .numbers-grid {
-    margin-top: 1.5rem;
     width: 100%;
     height: auto;
     display: flex;
@@ -210,6 +230,7 @@
     padding: 2rem 2rem 10rem;
 
     @media  screen and (min-width: 412px){
+      margin-top: 1rem;
       padding: 0.5rem 0.5rem 10rem;
     }
 
@@ -227,8 +248,8 @@
       transition: 0.3s ease-in-out;
 
       @media  screen and (min-width: 412px){
-        width: 3rem;
-        height: 3rem;
+        width: 2.5rem;
+        height: 2.5rem;
       }
     }
   }

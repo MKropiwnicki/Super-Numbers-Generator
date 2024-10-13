@@ -32,7 +32,7 @@ export const AdditionalSetsInput = ({gridVisibilitySwitch, rangeMinimum, rangeMa
         setAddButton(true);
     }
 
-    const handleOptionChange = (value) => {
+    const handleOptionChange = (value: number) => {
         setSelectedOption(value);
     };
 

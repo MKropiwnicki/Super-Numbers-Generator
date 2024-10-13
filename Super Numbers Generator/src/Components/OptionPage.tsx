@@ -63,27 +63,6 @@ export const OptionPage = ({rangeMinimum, rangeMaximum, amount}: OptionPageProps
     };
 
 
-    // const containerForm = {
-    //     hidden: { opacity: 1, scale: 0 },
-    //     visible: {
-    //         opacity: 1,
-    //         scale: 1,
-    //         transition: {
-    //             delayChildren: 1,
-    //             staggerChildren: 0.2
-    //         }
-    //     }
-    // };
-    //
-    // const itemForm = {
-    //     hidden: { y: 20, opacity: 0 },
-    //     visible: {
-    //         y: 0,
-    //         opacity: 1
-    //     }
-    // };
-
-
     const grid = () => {
         setGridData(gridGenerator(rangeMinimum, rangeMaximum))
     }

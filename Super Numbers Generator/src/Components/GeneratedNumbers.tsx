@@ -38,6 +38,7 @@ export const GeneratedNumbers = ({dataToRender, amount, max, visibility, visibil
        visibilitySwitch(!visibility);
     }
 
+
     return (
         <motion.div className='numbers-wrapper'>
             <motion.h2 className='numbers-text'>Your numbers:</motion.h2>

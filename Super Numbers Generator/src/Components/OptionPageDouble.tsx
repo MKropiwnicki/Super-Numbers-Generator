@@ -7,7 +7,6 @@ import {GeneratedNumbersDouble} from "./GeneratedNumbersDouble.tsx";
 import {useNavigate} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleArrowLeft} from "@fortawesome/free-solid-svg-icons";
-import {AdditionalSetsInput} from "./AdditionalSetsInput.tsx";
 import {AdditionalSetsInputDouble} from "./AdditionalSetsInputDouble.tsx";
 
 
@@ -66,27 +65,6 @@ export const OptionPageDouble = ({rangeMinimum, rangeMaximum, amount, rangeMinim
             }
         }
     };
-
-
-    // const containerForm = {
-    //     hidden: { opacity: 1, scale: 0 },
-    //     visible: {
-    //         opacity: 1,
-    //         scale: 1,
-    //         transition: {
-    //             delayChildren: 1,
-    //             staggerChildren: 0.2
-    //         }
-    //     }
-    // };
-    //
-    // const itemForm = {
-    //     hidden: { y: 20, opacity: 0 },
-    //     visible: {
-    //         y: 0,
-    //         opacity: 1
-    //     }
-    // };
 
 
     const grid = () => {

@@ -1,4 +1,4 @@
-import {motion, easeInOut, AnimatePresence} from "framer-motion"
+import {motion, AnimatePresence} from "framer-motion"
 import {faDiceFour, faDiceOne, faDiceThree, faDiceTwo} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useNavigate} from "react-router-dom";
@@ -73,11 +73,6 @@ export const QuickSetMenu = ({minimumDeclaration, maximumDeclaration, amountDecl
     return(
         <AnimatePresence>
             <motion.div
-                // key={"setMenuBox"}
-                // initial={{y: 0, opacity: 0}}
-                // animate={{y: 0, opacity: 1}}
-                // transition={{easeInOut, duration: 0.5}}
-                // exit={{y: 0, opacity: 0}}
                 className='sets-container'>
                 <motion.div className='sets-menu'
                             key={'setsMenu'}

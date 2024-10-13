@@ -7,6 +7,7 @@ import {GeneratedNumbers} from "./GeneratedNumbers.tsx";
 import {useNavigate} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import {AdditionalSetsInput} from "./AdditionalSetsInput.tsx";
 
 
 
@@ -23,6 +24,7 @@ export const OptionPage = ({rangeMinimum, rangeMaximum, amount}: OptionPageProps
     const [gridData, setGridData] = useState<number[]>([]);
     const [numbersList, setNumbersList] = useState(false);
     const [numbersGrid, setNumbersGrid] = useState(false);
+    const [visibility, setVisibility] = useState<boolean>(false);
 
 
     const navigate = useNavigate();
@@ -45,6 +47,7 @@ export const OptionPage = ({rangeMinimum, rangeMaximum, amount}: OptionPageProps
         setNumbersList(true);
 
     }
+
 
 
     const container = {
@@ -98,8 +101,16 @@ export const OptionPage = ({rangeMinimum, rangeMaximum, amount}: OptionPageProps
                 <div className='bar'>
                     <FontAwesomeIcon icon={faCircleArrowLeft} className={'back-icon'} onClick={handleHome}/>
                 </div>
-                {numbersList && <GeneratedNumbers dataToRender={dataToRender} amount={amount} max={rangeMaximum}
+                {numbersList && <GeneratedNumbers dataToRender={dataToRender}
+                                                  amount={amount}
+                                                  max={rangeMaximum}
+                                                  visibility={visibility}
+                                                  visibilitySwitch={setVisibility}
                                                   refresh={handleGenerate}/>}
+                {visibility && <AdditionalSetsInput gridVisibilitySwitch={setNumbersGrid}
+                                                    rangeMinimum={rangeMinimum}
+                                                    rangeMaximum={rangeMaximum}
+                                                    amount={amount}/>}
                 {numbersGrid && <NumbersGrid data={gridData} selectedNumbers={dataToRender}/>}
 
             </motion.div>

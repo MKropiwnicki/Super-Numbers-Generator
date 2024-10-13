@@ -49,7 +49,7 @@ export const QuickSetMenu = ({minimumDeclaration, maximumDeclaration, amountDecl
 
 
 
-    const containerTile = {
+    const optionContainer = {
         hidden: { opacity: 1, scale: 1 },
         visible: {
             opacity: 1,
@@ -73,17 +73,17 @@ export const QuickSetMenu = ({minimumDeclaration, maximumDeclaration, amountDecl
     return(
         <AnimatePresence>
             <motion.div
-                key={"setMenuBox"}
-                initial={{y: 0, opacity: 0}}
-                animate={{y: 0, opacity: 1}}
-                transition={{easeInOut, duration: 0.5}}
-                exit={{y: 0, opacity: 0}}
+                // key={"setMenuBox"}
+                // initial={{y: 0, opacity: 0}}
+                // animate={{y: 0, opacity: 1}}
+                // transition={{easeInOut, duration: 0.5}}
+                // exit={{y: 0, opacity: 0}}
                 className='sets-container'>
                 <motion.div className='sets-menu'
                             key={'setsMenu'}
                             initial="hidden"
                             animate="visible"
-                            variants={containerTile}>
+                            variants={optionContainer}>
                     <motion.div className={'sets-menu-tile first'}
                                 variants={optionTile}
                                 key={'5/42Tile'}

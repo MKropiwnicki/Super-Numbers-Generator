@@ -416,17 +416,62 @@
 //  border: 1px solid colors.$accent-color;
 //}
 
-#light .number-circle {
+#light .number-circle, .additional-number-circle {
   background: #12EB90;
   box-shadow: 3px 5px 10px colors.$light-btn-shadow;
   border: 1px solid colors.$light-main-color;
 }
 
-#dark .number-circle {
+#dark .number-circle, .additional-number-circle {
   border: 1px solid colors.$accent-color;
   background: rgba(0 , 0 , 128, 0.4);
   box-shadow: inset 0 0 10px rgba(colors.$light-btn-shadow, 1);
 
+}
+
+#light .additional-number-circle {
+  background: #12EB90;
+  box-shadow: 3px 5px 10px colors.$light-btn-shadow;
+  border: 1px solid colors.$light-main-color;
+}
+
+#dark .additional-number-circle {
+  border: 1px solid colors.$accent-color;
+  background: rgba(0 , 0 , 128, 0.4);
+  box-shadow: inset 0 0 10px rgba(colors.$light-btn-shadow, 1);
+}
+
+#light .additional-number-circle-double{
+  background: #12EB90;
+  box-shadow: 3px 5px 10px colors.$light-btn-shadow;
+  border: 1px solid colors.$light-main-color;
+}
+
+#dark .additional-number-circle-double{
+  border: 1px solid colors.$accent-color;
+  background: rgba(0 , 0 , 128, 0.4);
+  box-shadow: inset 0 0 10px rgba(colors.$light-btn-shadow, 1);
+}
+
+
+#light .additional-secondary-number-circle-double{
+  background: #5A189A;
+  box-shadow: 3px 5px 10px colors.$light-btn-shadow;
+  border: 1px solid colors.$light-main-color;
+
+  p {
+    color: colors.$dark-main-color;
+  }
+}
+
+#dark .additional-secondary-number-circle-double{
+  background: #FF9E00;
+  box-shadow: 3px 5px 10px colors.$light-btn-shadow;
+  border: 1px solid colors.$light-main-color;
+
+  p {
+    color: colors.$light-main-color;
+  }
 }
 
 
@@ -462,7 +507,6 @@
   box-shadow: 0 0 10px #F4C95D;
 }
 
-
 #light .generator-btn {
   //background: colors.$light-main-color;
   background: #32FCA7;
@@ -485,4 +529,58 @@
 #dark .generator-alert {
   color: red !important;
 }
+
+#light .option-wrapper {
+  background: #EDAE49;
+  box-shadow: 3px 5px 10px colors.$light-btn-shadow;
+  border: 1px solid colors.$light-main-color;
+}
+
+#dark .option-wrapper {
+  border: 1px solid colors.$accent-color;
+  background: rgba(0 , 0 , 128, 0.4);
+  box-shadow: inset 0 0 10px rgba(colors.$light-btn-shadow, 1);
+}
+
+#light .addSet-btn {
+  //background: rgba(colors.$light-btn-shadow, 0.3);
+  //border: 1px solid colors.$light-main-color;
+  //color: colors.$light-main-color;
+  color: colors.$light-main-color;
+  border: 1px solid colors.$light-main-color;
+  background: #EDAE49;
+  box-shadow: 3px 5px 10px colors.$light-btn-shadow;
+}
+
+#dark .addSet-btn {
+  color: colors.$accent-color;
+  border: 1px solid colors.$accent-color;
+  background: rgba(0 , 0 , 128, 0.4);
+  box-shadow: inset 0 0 30px rgba(colors.$light-btn-shadow, 1);
+}
+
+#light .radio-selected {
+  background: #003D5B;
+  box-shadow: none;
+
+  label {
+    color: #EDAE49;
+  }
+}
+
+#dark .radio-selected {
+  color: colors.$light-main-color;
+  background: colors.$accent-color;
+  box-shadow: 0 0 10px #F4C95D;
+
+  label {
+    color: colors.$light-main-color;
+  }
+}
+
+
+
+
+
+
 

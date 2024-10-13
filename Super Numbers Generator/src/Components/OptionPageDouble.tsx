@@ -7,6 +7,7 @@ import {GeneratedNumbersDouble} from "./GeneratedNumbersDouble.tsx";
 import {useNavigate} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import {AdditionalSetsInputDouble} from "./AdditionalSetsInputDouble.tsx";
 
 
 
@@ -28,6 +29,7 @@ export const OptionPageDouble = ({rangeMinimum, rangeMaximum, amount, rangeMinim
     const [gridDataAdditional, setGridDataAdditional] = useState<number[]>([]);
     const [numbersList, setNumbersList] = useState(false);
     const [numbersGrid, setNumbersGrid] = useState(false);
+    const [visibility, setVisibility] = useState<boolean>(false);
 
     useEffect(() => {
         const numbersTimeout = setTimeout(() => handleGenerate(), 500);
@@ -65,27 +67,6 @@ export const OptionPageDouble = ({rangeMinimum, rangeMaximum, amount, rangeMinim
     };
 
 
-    // const containerForm = {
-    //     hidden: { opacity: 1, scale: 0 },
-    //     visible: {
-    //         opacity: 1,
-    //         scale: 1,
-    //         transition: {
-    //             delayChildren: 1,
-    //             staggerChildren: 0.2
-    //         }
-    //     }
-    // };
-    //
-    // const itemForm = {
-    //     hidden: { y: 20, opacity: 0 },
-    //     visible: {
-    //         y: 0,
-    //         opacity: 1
-    //     }
-    // };
-
-
     const grid = () => {
         setGridData(gridGenerator(rangeMinimum, rangeMaximum));
         setGridDataAdditional(gridGenerator(rangeMinimumAdditional, rangeMaximumAdditional));
@@ -112,7 +93,16 @@ export const OptionPageDouble = ({rangeMinimum, rangeMaximum, amount, rangeMinim
                                                         dataToRenderAdditional={dataToRenderAdditional}
                                                         amountAdditional={amountAdditional}
                                                         maxAdditional={rangeMaximumAdditional}
+                                                        visibility={visibility}
+                                                        visibilitySwitch={setVisibility}
                                                         refresh={handleGenerate}/>}
+                {visibility && <AdditionalSetsInputDouble gridVisibilitySwitch={setNumbersGrid}
+                                                          rangeMinimum={rangeMinimum}
+                                                          rangeMaximum={rangeMaximum}
+                                                          amount={amount}
+                                                          amountAdditional={amountAdditional}
+                                                          minAdditional = {rangeMinimumAdditional}
+                                                          maxAdditional={rangeMaximumAdditional}/>}
                 {numbersGrid && <NumbersGridDouble data={gridData}
                                                    selectedNumbers={dataToRender}
                                                    dataAdditional={gridDataAdditional}

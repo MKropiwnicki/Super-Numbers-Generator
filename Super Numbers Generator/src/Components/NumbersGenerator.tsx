@@ -23,8 +23,8 @@ export const NumbersGenerator = () => {
     const [numbersGrid, setNumbersGrid] = useState(false);
     const [refreshIcon, setRefreshIcon] = useState(false);
     const [alertRange, setAlertRange] = useState<boolean>(false);
-    const [alertAmount, setAlertAmount] = useState<boolean>(false)
-
+    const [alertAmount, setAlertAmount] = useState<boolean>(false);
+    const [alertEmpty, setAlertEmpty] =useState<boolean>(false)
 
     useEffect(()=> {
         if (rangeMinimum !== null && rangeMaximum !== null && amount !== null) {
@@ -40,6 +40,10 @@ export const NumbersGenerator = () => {
             } else {
                 setAlertAmount(false);
             }
+        }
+
+        if (rangeMinimum === null || rangeMaximum === null || amount === null) {
+            setAlertEmpty(true);
         }
     },[rangeMinimum, rangeMaximum, amount]);
 
@@ -177,11 +181,8 @@ const handleGenerate = (e: FormEvent) => {
                                     id='amount'
                                     placeholder=''/>
                             </motion.div>
-                            <motion.button disabled={alertRange || alertAmount} className={`generator-btn ${refreshed}`}
+                            <motion.button disabled={alertRange || alertAmount || alertEmpty} className={`generator-btn ${refreshed}`}
                                            key={"formBtn"}
-                                // initial={{y: 0, opacity: 0}}
-                                // animate={{y: 0, opacity: 1}}
-                                // exit={{y: 0, opacity: 0}}
                                            onClick={handleGenerate}
                                            layout transition={{duration: 0.1}}
                                            type='submit'>{btnContent}

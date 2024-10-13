@@ -150,6 +150,26 @@
     flex-direction: column;
     align-items: center;
 
+    .btns-container {
+      position: relative;
+
+      .add-btn {
+        position: absolute;
+        right: -4rem;
+        bottom: 0;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        border: none;
+        background: none;
+
+        .add-icon {
+          font-size: 3rem;
+          display: inline;
+        }
+      }
+    }
+
 
     .arrows {
       padding: 1.3rem 1.3rem;
@@ -193,6 +213,8 @@
         @media  screen and (min-width: 412px){
           width: 3.2rem;
           height: 3.2rem;
+          margin: 0 0.3rem;
+          font-size: 1.3rem;
         }
       }
     }
@@ -266,4 +288,158 @@
     height: auto;
     margin-bottom: 5rem;
   }
+
+  .options-container{
+    width: 100%;
+    height: auto;
+    margin: 1rem auto;
+
+    .radio-form {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+
+
+
+      .option-list {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+
+      .option-wrapper {
+        height: 2rem;
+        width: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5rem;
+        font-size: 1rem;
+
+
+
+        @media  screen and (min-width: 412px){
+          width: 2.5rem;
+          height: 2.5rem;
+          font-size: 1.3rem;
+        }
+
+      }
+      .addSet-btn {
+        width: auto;
+        height: auto;
+        margin: 1.5rem auto;
+        border-radius: 3rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.6rem;
+
+        @media  screen and (min-width: 412px){
+          font-size: 1rem;
+        }
+
+        svg {
+          display: block;
+        }
+      }
+
+      .sets-arrows {
+
+        border-radius: 6rem;
+        padding: 0.7rem;
+
+        @media  screen and (min-width: 412px){
+          padding: 1rem;
+        }
+
+        svg {
+          font-size: 1rem;
+
+          @media  screen and (min-width: 412px){
+            font-size: 1.3rem;
+          }
+        }
+      }
+
+
+
+
+    }
+
+
+    label{
+      font-family: variables.$Montserrat;
+      font-weight: 900;
+
+    }
+
+    input{
+      display: none;
+    }
+
+  }
+
+  .additionalSets-container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 7rem;
+
+    .additionalSetsList {
+      list-style: none;
+      margin: 10px auto;
+      display: flex;
+      padding-bottom: 0.5rem;
+
+      .additional-number-circle {
+        width: 2.9rem;
+        height: 2.9rem;
+        margin: 0.1rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: variables.$Montserrat;
+        font-size: 1rem;
+        font-weight: 700;
+
+        @media  screen and (min-width: 412px){
+          width: 3.2rem;
+          height: 3.2rem;
+          margin: 0 0.3rem;
+        }
+      }
+    }
+  }
+
+  .double-set-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 1rem;
+
+    .additional-number-circle-double, .additional-secondary-number-circle-double {
+      width: 2.7rem;
+      height: 2.7rem;
+      margin: 0.1rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: variables.$Montserrat;
+      font-size: 0.9rem;
+      font-weight: 700;
+
+      @media  screen and (min-width: 412px){
+        width: 2.9rem;
+        height: 2.9rem;
+        margin: 0 0.3rem;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+
 }

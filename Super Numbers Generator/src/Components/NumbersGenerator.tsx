@@ -24,27 +24,18 @@ export const NumbersGenerator = () => {
     const [refreshIcon, setRefreshIcon] = useState(false);
     const [alertRange, setAlertRange] = useState<boolean>(false);
     const [alertAmount, setAlertAmount] = useState<boolean>(false);
-    const [alertEmpty, setAlertEmpty] =useState<boolean>(false)
+    const [alertEmpty, setAlertEmpty] = useState<boolean>(false)
 
     useEffect(()=> {
         if (rangeMinimum !== null && rangeMaximum !== null && amount !== null) {
             const range = rangeMaximum - rangeMinimum;
-            if(range >= 200) {
-                setAlertRange(true);
-            } else {
-                setAlertRange(false);
-            }
-
-            if(amount > range) {
-                setAlertAmount(true);
-            } else {
-                setAlertAmount(false);
-            }
-        }
-
-        if (rangeMinimum === null || rangeMaximum === null || amount === null) {
+            setAlertRange(range >= 200);
+            setAlertAmount(amount > range);
+            setAlertEmpty(false);
+        } else {
             setAlertEmpty(true);
         }
+
     },[rangeMinimum, rangeMaximum, amount]);
 
 
@@ -118,12 +109,6 @@ const handleGenerate = (e: FormEvent) => {
             opacity: 1
         }
     };
-
-    // const spring = {
-    //     type: "spring",
-    //     stiffness: 800,
-    //     damping: 25
-    // };
 
     const grid = () => {
         setGridData(gridGenerator(rangeMinimum, rangeMaximum))

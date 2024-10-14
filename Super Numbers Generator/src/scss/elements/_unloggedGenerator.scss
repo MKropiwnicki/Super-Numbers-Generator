@@ -151,10 +151,16 @@
 
     .btns-container {
       position: relative;
+      width: 60%;
+      //height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
 
       .add-btn {
         position: absolute;
-        right: -4rem;
+        right: 1rem;
         bottom: 0;
         width: 3rem;
         height: 3rem;
@@ -248,10 +254,12 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 2rem 2rem 10rem;
+    //padding: 2rem 2rem 10rem;
+    padding: 0 2rem 10rem 2rem;
+    margin-top: 2rem;
+
 
     @media  screen and (min-width: 412px){
-      margin-top: 1rem;
       padding: 0.5rem 0.5rem 10rem;
     }
 
@@ -331,8 +339,8 @@
         height: auto;
         margin: 1.5rem auto;
         border-radius: 3rem;
-        padding: 0.5rem 1rem;
-        font-size: 0.6rem;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.8rem;
 
         @media  screen and (min-width: 412px){
           font-size: 1rem;
@@ -346,7 +354,8 @@
       .sets-arrows {
 
         border-radius: 6rem;
-        padding: 0.7rem;
+        padding: 1rem;
+        font-size: 0.8rem;
 
         @media  screen and (min-width: 412px){
           padding: 1rem;
@@ -381,11 +390,10 @@
 
   .additionalSets-container {
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 8rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 7rem;
 
     .additionalSetsList {
       list-style: none;
@@ -418,6 +426,7 @@
     display: flex;
     justify-content: space-evenly;
     padding: 0 1rem;
+    margin-bottom: 8rem;
 
     .additional-number-circle-double, .additional-secondary-number-circle-double {
       width: 2.7rem;

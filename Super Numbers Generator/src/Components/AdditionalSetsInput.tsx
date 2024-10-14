@@ -152,7 +152,7 @@ export const AdditionalSetsInput = ({gridVisibilitySwitch, rangeMinimum, rangeMa
                     </motion.button>}
                 </motion.form>
             </motion.div>
-            <motion.ul className='additionalSets-container'>
+            {additionalSetsData.length > 0 && <motion.ul className='additionalSets-container'>
                 {additionalSetsData.map((element, index) => (
                     <motion.ul className='additionalSetsList'
                                key={index}
@@ -161,14 +161,14 @@ export const AdditionalSetsInput = ({gridVisibilitySwitch, rangeMinimum, rangeMa
                                animate="visible">
                         {element.map((item, index) => (
                             <motion.div className='additional-number-circle'
-                                       key={index}
-                                       variants={listItem}><p>{item}</p>
+                                        key={index}
+                                        variants={listItem}><p>{item}</p>
                             </motion.div>
                         ))}
                     </motion.ul>
                 ))}
 
-            </motion.ul>
+            </motion.ul>}
         </>
 
     )

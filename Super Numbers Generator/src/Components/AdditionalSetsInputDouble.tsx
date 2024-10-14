@@ -160,7 +160,7 @@ export const AdditionalSetsInputDouble = ({gridVisibilitySwitch, rangeMinimum, r
                     </motion.button>}
                 </motion.form>
             </motion.div>
-            <motion.div className='double-set-container'>
+            {additionalSetsData.length > 0 && <motion.div className='double-set-container'>
                 <motion.ul className='additionalSets-container'>
                     {additionalSetsData.map((element, index) => (
                         <motion.ul className='additionalSetsList'
@@ -195,7 +195,7 @@ export const AdditionalSetsInputDouble = ({gridVisibilitySwitch, rangeMinimum, r
                     ))}
 
                 </motion.ul>
-            </motion.div>
+            </motion.div>}
 
         </>
 

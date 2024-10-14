@@ -378,9 +378,9 @@
 
 #dark .homePage-btn {
   box-shadow: 0 0 10px colors.$dark-btn-glow;
-  color:  colors.$light-main-color;
-  border: 2px solid colors.$light-main-color;
-  background: rgba(255, 255, 255, 0.4);
+  color:  colors.$dark-main-color;
+  border: 1px solid colors.$light-main-color;
+  background: transparent;
 }
 
 
@@ -395,26 +395,6 @@
 #dark .user-icon {
   box-shadow: 0 0 10px colors.$dark-main-color;
 }
-
-#light .generator-container {
-  //background: colors.$light-start-btn;
-  //box-shadow: 3px 5px 10px colors.$light-btn-shadow;
-}
-
-#dark .generator-container {
-  //background: linear-gradient(180deg, rgba(255, 255, 255,0) 40%, colors.$light-start-btn 100%);
-  //border-bottom: 1px solid colors.$accent-color;
-}
-
-//#light .numbers-wrapper {
-//  background: colors.$light-start-btn;
-//  box-shadow: 3px 5px 10px colors.$light-btn-shadow;
-//}
-
-//#dark .numbers-wrapper {
-//  background: colors.$light-start-btn;
-//  border: 1px solid colors.$accent-color;
-//}
 
 #light .number-circle, .additional-number-circle {
   background: #12EB90;
@@ -531,7 +511,7 @@
 }
 
 #light .option-wrapper {
-  background: #EDAE49;
+  background: #FFD60A;
   box-shadow: 3px 5px 10px colors.$light-btn-shadow;
   border: 1px solid colors.$light-main-color;
 }
@@ -543,12 +523,9 @@
 }
 
 #light .addSet-btn {
-  //background: rgba(colors.$light-btn-shadow, 0.3);
-  //border: 1px solid colors.$light-main-color;
-  //color: colors.$light-main-color;
   color: colors.$light-main-color;
   border: 1px solid colors.$light-main-color;
-  background: #EDAE49;
+  background: #FFD60A;
   box-shadow: 3px 5px 10px colors.$light-btn-shadow;
 }
 
@@ -560,11 +537,15 @@
 }
 
 #light .radio-selected {
-  background: #003D5B;
-  box-shadow: none;
+  border: none;
+  background: #EA1744;
+  box-shadow: 3px 5px 15px colors.$light-btn-shadow;
+  transform: scale(1.25) !important;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border 0.2s ease-in-out;
+
 
   label {
-    color: #EDAE49;
+    color: #FFD60A;
   }
 }
 
@@ -572,6 +553,8 @@
   color: colors.$light-main-color;
   background: colors.$accent-color;
   box-shadow: 0 0 10px #F4C95D;
+  transform: scale(1.25) !important;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 
   label {
     color: colors.$light-main-color;

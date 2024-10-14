@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowsRotate, faCirclePlus} from "@fortawesome/free-solid-svg-icons";
-import React from "react";
+import {faArrowsRotate, faCircleMinus, faCirclePlus} from "@fortawesome/free-solid-svg-icons";
+import React, {useState} from "react";
 
 type GeneratedNumbersDoubleProps = {
     dataToRender: number[],
@@ -12,9 +12,24 @@ type GeneratedNumbersDoubleProps = {
     maxAdditional: number | null,
     visibility: boolean,
     visibilitySwitch: React.Dispatch<boolean>,
+    gridVisibility: boolean,
+    gridVisibilitySwitch: React.Dispatch<boolean>,
     refresh: ()=> void
 }
-export const GeneratedNumbersDouble = ({dataToRender, amount, max, dataToRenderAdditional, amountAdditional, maxAdditional, visibility, visibilitySwitch, refresh}: GeneratedNumbersDoubleProps) => {
+export const GeneratedNumbersDouble = ({dataToRender, amount, max, dataToRenderAdditional, amountAdditional, maxAdditional, visibility, visibilitySwitch, gridVisibility, gridVisibilitySwitch, refresh}: GeneratedNumbersDoubleProps) => {
+
+
+
+    const [addButton, setAddButton] = useState<boolean>(true);
+
+
+    let addButtonContent;
+
+    if(addButton) {
+        addButtonContent = <FontAwesomeIcon icon={faCirclePlus} className={'add-icon'}/>
+    } else {
+        addButtonContent = <FontAwesomeIcon icon={faCircleMinus} className={'add-icon'}/>
+    }
 
     const containerNumbers = {
         hidden: { opacity: 1, scale: 0 },
@@ -38,6 +53,12 @@ export const GeneratedNumbersDouble = ({dataToRender, amount, max, dataToRenderA
 
     const handleVisibility = ()=> {
         visibilitySwitch(!visibility);
+        setAddButton(!addButton);
+
+        if(!gridVisibility) {
+            gridVisibilitySwitch(true)
+        }
+
     }
 
 
@@ -89,7 +110,7 @@ export const GeneratedNumbersDouble = ({dataToRender, amount, max, dataToRenderA
                                onClick={handleVisibility}
                                layout transition={{duration: 0.1}}
                                type='button'>
-                    {<FontAwesomeIcon icon={faCirclePlus} className={'add-icon'}/>}
+                    {addButtonContent}
                 </motion.button>
             </motion.div>
 

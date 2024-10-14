@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import {faArrowsRotate, faCirclePlus} from "@fortawesome/free-solid-svg-icons";
+import {faArrowsRotate, faCircleMinus, faCirclePlus} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, {useState} from "react";
 
 
 type GeneratedNumbersProps = {
@@ -10,9 +10,23 @@ type GeneratedNumbersProps = {
     max: number | null,
     visibility: boolean,
     visibilitySwitch: React.Dispatch<boolean>,
+    gridVisibility: boolean,
+    gridVisibilitySwitch: React.Dispatch<boolean>,
     refresh: ()=> void
 }
-export const GeneratedNumbers = ({dataToRender, amount, max, visibility, visibilitySwitch, refresh}: GeneratedNumbersProps) => {
+export const GeneratedNumbers = ({dataToRender, amount, max, visibility, visibilitySwitch, gridVisibility, gridVisibilitySwitch, refresh}: GeneratedNumbersProps) => {
+
+    const [addButton, setAddButton] = useState<boolean>(true);
+
+
+    let addButtonContent;
+
+    if(addButton) {
+        addButtonContent = <FontAwesomeIcon icon={faCirclePlus} className={'add-icon'}/>
+    } else {
+        addButtonContent = <FontAwesomeIcon icon={faCircleMinus} className={'add-icon'}/>
+    }
+
 
     const containerNumbers = {
         hidden: { opacity: 1, scale: 0 },
@@ -36,6 +50,12 @@ export const GeneratedNumbers = ({dataToRender, amount, max, visibility, visibil
 
     const handleVisibility = ()=> {
        visibilitySwitch(!visibility);
+       setAddButton(!addButton);
+
+       if(!gridVisibility) {
+           gridVisibilitySwitch(true)
+       }
+
     }
 
 
@@ -74,7 +94,7 @@ export const GeneratedNumbers = ({dataToRender, amount, max, visibility, visibil
                     onClick={handleVisibility}
                                layout transition={{duration: 0.1}}
                                type='button'>
-                    {<FontAwesomeIcon icon={faCirclePlus} className={'add-icon'}/>}
+                    {addButtonContent}
                 </motion.button>
             </motion.div>
 
